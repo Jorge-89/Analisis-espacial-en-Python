@@ -10,3 +10,7 @@ from plotly.offline import init_notebook_mode, plot, iplot
 
 current_data= pd.read_csv("C:/Users\jorge\Documents\Geopython/countries-aggregated.csv")
 current_data.head()
+
+fig=px.choropleth(current_data, locations="Country", locationmode="country names", color= "Confirmed",animation_frame="Date")
+fig.update_layout(title="choropleth map of confirmed cases till today")
+fig.show()
